@@ -12,8 +12,8 @@ export default function Contacto({ lang }) {
         <a href='https://github.com/santiagodovalb' target='_blank' rel='noreferrer'>
         <img src={github} alt="github" />
         </a>
-        <a href='https://github.com/santiagodovalb' target='_blank' rel='noreferrer'>
-        <img src={linkedin} alt="github" />
+        <a href='https://www.linkedin.com/in/santiagodovalb/' target='_blank' rel='noreferrer'>
+        <img src={linkedin} alt="linkedin" />
         </a>
         <a href='mailto:santiagodovalb@gmail.com'>
         <img src={mail} alt="mail" />
