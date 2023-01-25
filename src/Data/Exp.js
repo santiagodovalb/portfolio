@@ -15,7 +15,7 @@ const exp = {
     desc: "Front-end developer for the Putnam Investments' website",
   },
   {
-    title: "Profesor asistente en full-stack Coding Bootcamp",
+    title: "Assistnat professor in full-stack Coding Bootcamp",
     place: "Plataforma 5",
     desc: "Assistance to students and technic mentoring in professional projects. Correction and feedback on test and personal projects. Development of web application for internal use. ",
   }
