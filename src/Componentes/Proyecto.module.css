@@ -1,0 +1,16 @@
+.cards {
+    text-decoration: none;
+    color: #daecf0;
+}
+
+.cards img {
+    width: 100%;
+}
+
+.text {
+    padding: 5px 20px;
+}
+
+.text p {
+    opacity: 50%;
+}

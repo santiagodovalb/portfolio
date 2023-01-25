@@ -1,0 +1,28 @@
+.links {
+    height: 10vh;
+    background-color:		#177085;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 10vh;
+    padding-right: 10vh;
+    font-size: 20px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 3px solid #28aeb1;
+    border-image: linear-gradient(to right, #28aeb1 50%, transparent 50%) 100% 1;
+    transition: all 0.3s linear;
+}
+
+.links a:hover{
+    border-image: linear-gradient(to right, #28aeb1 100%, #28aeb1 50%) 100% 1;
+    transition: all 0.3s linear;
+}
+
+.active {
+    border-bottom: 3px solid #28aeb1;
+    transition: all 0.3s linear;
+}

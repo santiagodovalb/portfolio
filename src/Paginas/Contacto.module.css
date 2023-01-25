@@ -1,0 +1,28 @@
+.content {
+  min-height: 100vh;
+    padding-bottom: 10vh;
+    background-color:#001e31;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: 	#daecf0;
+    width: 100%;
+    padding-top: 5vh;
+  }
+
+.content h1 {
+  font-size: 45px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin-top: 10vh;
+}
+
+.icons img {
+  width: 100px;
+  border-radius: 20px;
+  background-color: 	#daecf0;
+}

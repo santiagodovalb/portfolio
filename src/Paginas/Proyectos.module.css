@@ -1,0 +1,30 @@
+.content {
+  padding-bottom: 10vh;
+    background-color:#001e31;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: 	#daecf0;
+    width: 100%;
+    padding-top: 5vh;
+}
+
+.title {
+  font-size: 45px;
+}
+
+.grid {
+  width: 50%;
+  margin-top: 5vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 10vh;
+  row-gap: 5vh;
+  margin-right: 10vh;
+  margin-left: 10vh;
+}
+
+.element {
+  border: 3px solid #28aeb1;
+  border-radius: 5px;
+}
