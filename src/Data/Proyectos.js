@@ -29,7 +29,7 @@ const proyectos = [
     name: "OMDB",
     descSpa: "Database de peliculas, con sistema de busqueda, registro y favoritas",
     descEng: "Movie database, featuring registragion, search engine and favourites",
-    url: "https://omdb-webapp.netlify.app/home",
+    url: "https://omdb-webapp.netlify.app",
     img: omdb,
   },
 ];
