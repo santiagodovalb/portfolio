@@ -1,0 +1,24 @@
+.lang {
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+  }
+  
+  .menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 35px;
+    top:5px;
+  }
+
+  .option {
+    color: white;
+    border: 2px solid #28aeb1;
+    padding: 3px 3px;
+    margin-top: 3px;
+    font-size: 12px;
+    cursor: pointer;
+  }

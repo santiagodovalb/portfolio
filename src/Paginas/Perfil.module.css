@@ -7,18 +7,21 @@
   color: white;
   display: flex;
   justify-content: space-around;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .content img {
-  border-radius: 50%;
+  border-radius: 5px;
   height: 20rem;
+  border: 3px solid #35a79d;
 }
 
 .text {
   display: flex;
   flex-direction: column;
   color: 	#daecf0;
-  width: 35%;
+  width: 45%;
 }
 
 .title {
