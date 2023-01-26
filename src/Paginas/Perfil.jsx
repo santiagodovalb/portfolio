@@ -43,7 +43,7 @@ function Perfil({ lang }) {
           <br />
           {lang === "spa"
             ? "Creo que todas las personas deben incursionar en distintas áreas del conocimiento y tener un abanico amplio de intereses y conocimientos; así se puede tener una formación integral que permita encarar las tareas desde una perspectiva amplia. Mi experiencia en la música me aporta un set de habilidades blandas ideal para encarar el trabajo desde la creatividad y la colaboración en equipo, pilares para establecer un ambiente que lleve a conseguir buenas ideas y resultados"
-            : "I think everyone should  hace broad spectrum of knowledge and practice a wide range of disciplines. My experience in the music world provides me with an ideal set of soft skills that allow me to tackle any task from a creative and collaborative standpoint, which I consider pillars for a good work environment that leads to the best experiences and results."}
+            : "I think everyone should have a broad spectrum of knowledge and practice a wide range of disciplines. My experience in the music world provides me with an ideal set of soft skills that allow me to tackle any task from a creative and collaborative standpoint, which I consider pillars for a good work environment that leads to the best experiences and results."}
         </p>
       </div>
     </div>
