@@ -9,7 +9,7 @@ function Perfil({ lang }) {
       <div className={styles.text}>
         <div className={styles.header}>
           <div className={styles.titles}>
-            <span className={styles.title}>Santiago Doval</span>
+            <span className={styles.title}>Santiago <br />Doval</span>
             <span className={styles.subtitle}>
               {lang === "spa"
                 ? "Desarollador full-stack"
