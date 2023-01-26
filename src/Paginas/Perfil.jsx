@@ -7,27 +7,34 @@ function Perfil({ lang }) {
   return (
     <div className={styles.content}>
       <div className={styles.text}>
-        <span className={styles.title}>Santiago Doval</span>
-        <span className={styles.subtitle}>
-          {lang === "spa" ? "Desarollador full-stack" : "Full-stack developer"}
-        </span>
-        <a
-          href={
-            lang === "spa"
-              ? "CV-Santiago-Doval-2023.pdf"
-              : "CV Santiago Doval EN.pdf"
-          }
-          download
-        >
-          <button>
-            <img
-              style={{ height: "30px" }}
-              src={downlaod}
-              alt="download icon"
-            />
-            <span>{lang === "spa" ? "Descargar CV" : "Download CV"}</span>
-          </button>
-        </a>
+        <div className={styles.header}>
+          <div className={styles.titles}>
+            <span className={styles.title}>Santiago Doval</span>
+            <span className={styles.subtitle}>
+              {lang === "spa"
+                ? "Desarollador full-stack"
+                : "Full-stack developer"}
+            </span>
+            <a
+              href={
+                lang === "spa"
+                  ? "CV-Santiago-Doval-2023.pdf"
+                  : "CV Santiago Doval EN.pdf"
+              }
+              download
+            >
+              <button>
+                <img
+                  style={{ height: "30px" }}
+                  src={downlaod}
+                  alt="download icon"
+                />
+                <span>{lang === "spa" ? "Descargar CV" : "Download CV"}</span>
+              </button>
+            </a>
+          </div>
+          <img src={profile} alt="myself" />
+        </div>
         <p>
           {lang === "spa"
             ? "Desarrollador full-stack en formación permanente. Me interesa participar de proyectos desafiantes que me hagan crecer humana y profesionalmente, aprovechando el potencial de las herramientas mas demandadas de la industria."
@@ -39,7 +46,6 @@ function Perfil({ lang }) {
             : "I think everyone should  hace broad spectrum of knowledge and practice a wide range of disciplines. My experience in the music world provides me with an ideal set of soft skills that allow me to tackle any task from a creative and collaborative standpoint, which I consider pillars for a good work environment that leads to the best experiences and results."}
         </p>
       </div>
-      <img src={profile} alt="myself" />
     </div>
   );
 }

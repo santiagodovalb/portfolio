@@ -1,8 +1,8 @@
 .links {
     height: 10vh;
-    background-color:		#177085;
+    background-color:#177085;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding-left: 10vh;
     padding-right: 10vh;
@@ -25,4 +25,23 @@
 .active {
     border-bottom: 3px solid #28aeb1;
     transition: all 0.3s linear;
+}
+
+.mobLinks {
+    background-color:#177085;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.burguer {
+    height: 35px;
+    margin: 0 auto;
+}
+
+@media (max-width:600px)  {
+    .icons {
+      flex-direction: column;
+    }
 }

@@ -26,3 +26,15 @@
   border-radius: 20px;
   background-color: 	#daecf0;
 }
+
+@media (max-width:600px)  {
+  .icons {
+    flex-direction: column;
+    margin-top: 2vh;
+  }
+
+  .icons a {
+    margin: 0 auto;
+    margin-top: 5vh;
+  }
+ }

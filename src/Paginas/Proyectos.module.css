@@ -28,3 +28,9 @@
   border: 3px solid #28aeb1;
   border-radius: 5px;
 }
+
+@media (max-width:600px)  {
+  .grid {
+    justify-content: center;
+  }
+ }
