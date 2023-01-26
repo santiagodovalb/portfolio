@@ -29,7 +29,9 @@
   font-size: 45px;
   font-weight: bold;
   opacity: 80%;
-  line-height: 32px;
+  line-height: 36.5px;
+  -webkit-text-stroke: 2px #FF6044;
+  color: transparent;
 }
 
 .subtitle {
