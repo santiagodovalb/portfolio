@@ -21,6 +21,11 @@ export default function Desktop({ lang }) {
           {lang === 'spa' ? 'Experiencia' : 'Experience'}
         </span>
       </Link>
+      <Link to="/stack">
+        <span className={pathname === "/stack" ? styles.active : ""}>
+          Stack
+        </span>
+      </Link>
       <Link to="/contacto">
         <span className={pathname === "/contacto" ? styles.active : ""}>
           {lang === 'spa' ? 'Contacto' : 'Contact'}

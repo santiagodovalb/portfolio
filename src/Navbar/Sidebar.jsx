@@ -23,6 +23,11 @@ export default function Sidebar({ isShowSidebar, setIsShowSidebar, lang }) {
           {lang === 'spa' ? 'Experiencia' : 'Experience'}
         </span>
       </Link>
+      <Link onClick={() => setIsShowSidebar(false)} to="/stack">
+        <span className={pathname === "/stack" ? styles.active : ""}>
+          Stack
+        </span>
+      </Link>
       <Link onClick={() => setIsShowSidebar(false)} to="/contacto">
         <span className={pathname === "/contacto" ? styles.active : ""}>
           {lang === 'spa' ? 'Contacto' : 'Contact'}

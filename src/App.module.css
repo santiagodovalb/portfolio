@@ -1,8 +1,8 @@
 .lang {
-    height: 30px;
+    height: 4vh;
     position: absolute;
     right: 5px;
-    top: 5px;
+    top: 0.5vh;
     cursor: pointer;
   }
   

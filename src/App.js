@@ -7,6 +7,7 @@ import Contacto from "./Paginas/Contacto";
 import Experiencia from "./Paginas/Experiencia";
 import lang from './common/language.svg'
 import { useState } from "react"; 
+import Stack from './Paginas/Stack';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path='/experiencia' element={<Experiencia lang={language} />} />
         <Route path='/proyectos' element={<Proyectos lang={language} />} />
         <Route path='/contacto' element={<Contacto lang={language} />} />
+        <Route path='/stack' element={<Stack />} />
       </Routes>
     </div>
   );
