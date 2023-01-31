@@ -5,7 +5,7 @@ import Perfil from "./Paginas/Perfil";
 import Proyectos from "./Paginas/Proyectos";
 import Contacto from "./Paginas/Contacto";
 import Experiencia from "./Paginas/Experiencia";
-import lang from './common/language.svg'
+import lang from './common/globe.png'
 import { useState } from "react"; 
 import Stack from './Paginas/Stack';
 

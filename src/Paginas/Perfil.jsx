@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Perfil.module.css";
-import profile from "../common/profile.jpeg";
+import profile from "../common/profile.png";
 import downlaod from "../common/download.svg";
 
 function Perfil({ lang }) {
