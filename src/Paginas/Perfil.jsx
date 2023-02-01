@@ -33,7 +33,7 @@ function Perfil({ lang }) {
               </button>
             </a>
           </div>
-          <img src={profile} alt="myself" />
+          <img className={styles.profile} src={profile} alt="myself" />
         </div>
         <p>
           {lang === "spa"
