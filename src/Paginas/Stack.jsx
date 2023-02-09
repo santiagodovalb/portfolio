@@ -14,14 +14,38 @@ export default function Stack() {
     <div className={styles.content}>
       <h1 className={styles.title}>Stack</h1>
       <div className={styles.grid}>
+        <div className={styles.tech}>
         <img src={react} alt="react" />
+        <span>React</span>
+        </div>
+        <div className={styles.tech}>
         <img src={node} alt="node" />
+        <span>Node</span>
+        </div>
+        <div className={styles.tech}>
         <img src={redux} alt="redux" />
+        <span>Redux</span>
+        </div>
+        <div className={styles.tech}>
         <img src={html} alt="html" />
+        <span>HTML 5</span>
+        </div>
+        <div className={styles.tech}>
         <img src={css} alt="css" />
+        <span>CSS</span>
+        </div>
+        <div className={styles.tech}>
         <img src={mongo} alt="mongo" />
+        <span>MongoDB</span>
+        </div>
+        <div className={styles.tech}>
         <img src={mysql} alt="mysql" />
+        <span>MySQL</span>
+        </div>
+        <div className={styles.tech}>
         <img src={bootstrap} alt="bootsrap" />
+        <span>Bootstrap</span>
+        </div>
       </div>
     </div>
   );
