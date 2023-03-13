@@ -8,6 +8,7 @@ import html from "../common/html.svg";
 import mongo from "../common/mongo.svg";
 import css from "../common/css.svg";
 import mysql from "../common/mysql.svg";
+import typescript from '../common/typescript.svg'
 
 export default function Stack() {
   return (
@@ -21,6 +22,10 @@ export default function Stack() {
         <div className={styles.tech}>
         <img src={node} alt="node" />
         <span>Node</span>
+        </div>
+        <div className={styles.tech}>
+        <img src={typescript} alt="node" />
+        <span>TypeScript</span>
         </div>
         <div className={styles.tech}>
         <img src={redux} alt="redux" />
