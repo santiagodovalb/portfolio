@@ -18,8 +18,8 @@ function Perfil({ lang }) {
             <a
               href={
                 lang === "spa"
-                  ? "CV-Santiago-Doval-2023.pdf"
-                  : "CV Santiago Doval EN.pdf"
+                  ? "CV Santiago Doval 2023 - ES.pdf"
+                  : "CV Santiago Doval 2023 - EN.pdf"
               }
               download
             >
