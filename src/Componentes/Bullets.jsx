@@ -6,7 +6,7 @@ export default function Bullets ({ title, desc, place}) {
     <div className={styles.bullet}>
         <h2>• {title}</h2>
         <h3>{place}</h3>
-        <p>- {desc}</p>
+        <ul>{desc.map(item => <li>{item}</li>)}</ul>
     </div>
   )
 }
