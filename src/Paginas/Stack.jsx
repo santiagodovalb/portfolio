@@ -9,6 +9,7 @@ import mongo from "../common/mongo.svg";
 import css from "../common/css.svg";
 import mysql from "../common/mysql.svg";
 import typescript from '../common/typescript.svg'
+import git from '../common/git.svg'
 
 export default function Stack() {
   return (
@@ -34,6 +35,10 @@ export default function Stack() {
         <div className={styles.tech}>
         <img src={html} alt="html" />
         <span>HTML 5</span>
+        </div>
+        <div className={styles.tech}>
+        <img src={git} alt="html" />
+        <span>Git</span>
         </div>
         <div className={styles.tech}>
         <img src={css} alt="css" />
