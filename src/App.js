@@ -5,25 +5,18 @@ import Perfil from "./Paginas/Perfil";
 import Proyectos from "./Paginas/Proyectos";
 import Contacto from "./Paginas/Contacto";
 import Experiencia from "./Paginas/Experiencia";
-import lang from './common/globe.png'
 import { useState } from "react"; 
 import Stack from './Paginas/Stack';
 
 function App() {
 
   const [language, setLanguage] = useState('spa')
-  const [isShowMenu, setIsShowMenu] = useState(false)
-
-  const handleClick = (option) => {
-    setLanguage(option)
-    setIsShowMenu(false)
-  }
   
   return (
     <div className="main">
       <div className={styles.menu}>
-        <span onClick={() => handleClick('spa')} className={styles.option}>Es</span>
-        <span onClick={() => handleClick('eng')} className={styles.option}>En</span>
+        <span onClick={() => setLanguage('spa')} className={styles.option}>Es</span>
+        <span onClick={() => setLanguage('eng')} className={styles.option}>En</span>
       </div>
       <Navbar lang={language} />
       <Routes>  
