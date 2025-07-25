@@ -38,7 +38,7 @@ function Perfil({ lang }) {
         <p className={styles.about}>
           {lang === "spa"
             ? "Desarrollador full-stack en formación permanente. Me interesa participar de proyectos desafiantes que me hagan crecer humana y profesionalmente, aprovechando el potencial de las herramientas más demandadas de la industria."
-            : "I'm interested in challenging projects that will make me grow on a human and professional level, taking advantage of the industrie's most in-demand technologies."}
+            : "I'm interested in challenging projects that foster both personal and professional growth, while leveraging the industry's most in-demand technologies."}
           <br />
         </p>
       </div>
