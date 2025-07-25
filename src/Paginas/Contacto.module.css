@@ -19,6 +19,22 @@
   justify-content: space-evenly;
   width: 50%;
   margin-top: 10vh;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: appearBottomToTop 0.8s ease-out forwards, fadeIn 1.2s ease-in forwards;
+}
+
+@keyframes appearBottomToTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 .icons img {

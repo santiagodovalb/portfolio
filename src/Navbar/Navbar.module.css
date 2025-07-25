@@ -1,12 +1,24 @@
 .links {
     height: 10vh;
-    background-color:black;
+    background-color: black;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-left: 10vh;
     padding-right: 10vh;
     font-size: 20px;
+    animation: fadeInLinks 1s ease;
+}
+
+@keyframes fadeInLinks {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .links a {
@@ -36,8 +48,11 @@
 }
 
 .burguer {
-    height: 80%;
-    margin: 0 auto;
+    position: absolute;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    z-index: 2;
 }
 
 @media (max-width:600px)  {

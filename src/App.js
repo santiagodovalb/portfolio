@@ -21,10 +21,9 @@ function App() {
   
   return (
     <div className="main">
-      <img onClick={() => setIsShowMenu(!isShowMenu)} className={styles.lang} src={lang} alt='change language' />
-      <div className={styles.menu} style={{display: isShowMenu ? 'flex' : 'none'}}>
-        <span onClick={() => handleClick('spa')} className={styles.option}>Español</span>
-        <span onClick={() => handleClick('eng')} className={styles.option}>English</span>
+      <div className={styles.menu}>
+        <span onClick={() => handleClick('spa')} className={styles.option}>Es</span>
+        <span onClick={() => handleClick('eng')} className={styles.option}>En</span>
       </div>
       <Navbar lang={language} />
       <Routes>  

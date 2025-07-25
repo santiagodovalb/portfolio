@@ -8,9 +8,20 @@ export default function Mobile({ lang }) {
   const [isShowSidebar, setIsShowSidebar] = useState(false)
 
   return (
-    <div className={styles.mobLinks}>
-        <img onClick={() => setIsShowSidebar(!isShowSidebar)} src={burguer} alt='menu icon' className={styles.burguer} />
-        <Sidebar isShowSidebar={isShowSidebar} setIsShowSidebar={setIsShowSidebar} lang={lang} />
-    </div>
+    <>
+      <img
+        onClick={() => setIsShowSidebar(!isShowSidebar)}
+        src={burguer}
+        alt='menu icon'
+        className={styles.burguer}
+      />
+      <div className={styles.mobLinks}>
+        <Sidebar
+          isShowSidebar={isShowSidebar}
+          setIsShowSidebar={setIsShowSidebar}
+          lang={lang}
+        />
+      </div>
+    </>
   )
 }

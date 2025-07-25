@@ -9,9 +9,9 @@
   .menu {
     position: absolute;
     display: flex;
-    flex-direction: column;
-    right: 35px;
-    top:5px;
+    gap: 5px;
+    right: 10px;
+    top:10px;
   }
 
   .option {
@@ -21,4 +21,15 @@
     margin-top: 3px;
     font-size: 12px;
     cursor: pointer;
+  }
+
+  h1 {
+    opacity: 0;
+    animation: fadeInH1 1s ease-in forwards;
+  }
+
+  @keyframes fadeInH1 {
+    to {
+      opacity: 1;
+    }
   }

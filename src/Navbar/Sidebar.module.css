@@ -5,7 +5,7 @@
     background-color: rgb(56, 55, 55);
     position: absolute;
     left: 0;
-    top: 4.9vh;
+    top: 0;
     z-index: 1;
     opacity: 95%;
     flex-direction: column;

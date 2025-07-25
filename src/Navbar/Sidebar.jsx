@@ -13,11 +13,6 @@ export default function Sidebar({ isShowSidebar, setIsShowSidebar, lang }) {
       <Link onClick={() => setIsShowSidebar(false)} to="/">
         <span className={pathname === "/" ? styles.active : ""}>{lang === 'spa' ? 'Perfil' : 'Profile'}</span>
       </Link>
-      <Link onClick={() => setIsShowSidebar(false)} to="/proyectos">
-        <span className={pathname === "/proyectos" ? styles.active : ""}>
-          {lang === 'spa' ? 'Proyectos' : 'Projects'}
-        </span>
-      </Link>
       <Link onClick={() => setIsShowSidebar(false)} to="/experiencia">
         <span className={pathname === "/experiencia" ? styles.active : ""}>
           {lang === 'spa' ? 'Experiencia' : 'Experience'}

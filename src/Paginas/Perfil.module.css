@@ -13,6 +13,18 @@
 
 .profile {
   height: 35vh;
+  animation: slide-right-to-left 1s ease;
+}
+
+@keyframes slide-right-to-left {
+  from {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .text {
@@ -26,10 +38,36 @@
 .title {
   font-size: 45px;
   font-weight: bold;
-  opacity: 80%;
-  line-height: 36.5px;
-  -webkit-text-stroke: 2px #FF6044;
+  opacity: 85%;
+  line-height: 40px;
+  -webkit-text-stroke: 1px #FF6044;
   color: transparent;
+  text-shadow:
+    0 0 8px #FF6044,
+    0 0 16px #FF6044,
+    0 0 32px #FF6044,
+    0 0 64px #FF6044,
+    0 0 128px #FF6044;
+  animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow:
+      0 0 8px #FF6044,
+      0 0 16px #FF6044,
+      0 0 32px #FF6044,
+      0 0 64px #FF6044,
+      0 0 128px #FF6044;
+  }
+  to {
+    text-shadow:
+      0 0 16px #FF6044,
+      0 0 32px #FF6044,
+      0 0 64px #FF6044,
+      0 0 128px #FF6044,
+      0 0 256px #FF6044;
+  }
 }
 
 .subtitle {
@@ -46,6 +84,19 @@
 
 .text a {
   width: 140px;
+}
+
+.about {
+  animation: fade-in 1.2s ease;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.5;
+    }
 }
 
 .text button {
@@ -78,6 +129,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  animation: slide-left-to-right 1s ease;
+}
+
+@keyframes slide-left-to-right {
+  from {
+    transform: translateX(-25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @media (max-width:1150px)  {
