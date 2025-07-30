@@ -10,7 +10,7 @@
     opacity: 95%;
     flex-direction: column;
     font-size: 30px;
-    padding-top: 5vh;
+    padding-top: 10vh;
     padding-left: 2vh;
     transition: all 0.25s;
     -webkit-transition: all 0.25s;
@@ -36,6 +36,5 @@
 }
 
 .active {
-    border-bottom: 3px solid #28aeb1;
-    transition: all 0.3s linear;
+    border-bottom: 3px solid #FF6044;
 }

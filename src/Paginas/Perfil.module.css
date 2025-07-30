@@ -38,46 +38,53 @@
 .title {
   font-size: 45px;
   font-weight: bold;
-  opacity: 85%;
+  opacity: 0.85;
   line-height: 40px;
-  -webkit-text-stroke: 1px #FF6044;
-  color: transparent;
+  color: #FF6044;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
   text-shadow:
+    0 0 4px #FF6044,
     0 0 8px #FF6044,
     0 0 16px #FF6044,
-    0 0 32px #FF6044,
-    0 0 64px #FF6044,
-    0 0 128px #FF6044;
+    0 0 32px #FF6044;
   animation: neon-glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes neon-glow {
   from {
     text-shadow:
+      0 0 4px #FF6044,
       0 0 8px #FF6044,
-      0 0 16px #FF6044,
-      0 0 32px #FF6044,
-      0 0 64px #FF6044,
-      0 0 128px #FF6044;
+      0 0 16px #FF6044;
   }
   to {
     text-shadow:
+      0 0 8px #FF6044,
       0 0 16px #FF6044,
-      0 0 32px #FF6044,
-      0 0 64px #FF6044,
-      0 0 128px #FF6044,
-      0 0 256px #FF6044;
+      0 0 32px #FF6044;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 35px;
+    line-height: 32px;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.2);
+    text-shadow:
+      0 0 2px #FF6044,
+      0 0 4px #FF6044,
+      0 0 8px #FF6044;
   }
 }
 
 .subtitle {
-  opacity: 50%;
+  opacity: 70%;
 }
 
 .text p {
-  opacity: 50%;
+  opacity: 70%;
   font-size: 18px;
-  text-align: justify;
+  text-align: left;
   line-height: 30px;
   margin-top: 8vh;
 }

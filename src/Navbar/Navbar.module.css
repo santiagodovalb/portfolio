@@ -35,8 +35,7 @@
 }
 
 .active {
-    border-bottom: 3px solid #28aeb1;
-    transition: all 0.3s linear;
+    border-bottom: 3px solid #FF6044;
 }
 
 .mobLinks {
