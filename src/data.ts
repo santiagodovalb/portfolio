@@ -150,6 +150,36 @@ export const projects: Project[] = [
     site: 'https://ia-regulacion.vercel.app',
     repo: 'https://github.com/santiagodovalb/ia-regulacion',
   },
+  {
+    id: 'boletin',
+    name: 'Boletín Oficial, en claro',
+    image: '/projects/boletin.svg',
+    tagline: {
+      es: 'Cada norma que publica el Estado nacional, resumida en castellano simple y ordenada según cuánto afecta a la gente.',
+      en: 'Every rule Argentina’s national government publishes, summarized in plain Spanish and ranked by how much it affects people.',
+    },
+    bullets: [
+      {
+        es: 'Toma la Primera sección del Boletín Oficial (leyes, decretos y resoluciones) y resume cada norma con IA según un esquema fijo: tema, tipo de medida, a quién afecta y relevancia.',
+        en: 'Takes the first section of the Official Gazette (laws, decrees and resolutions) and summarizes every rule with AI using a fixed schema: topic, type of measure, who it affects and relevance.',
+      },
+      {
+        es: 'Un tablero por día con totales, temas y filtros por relevancia, y cada resumen enlazado al texto oficial.',
+        en: 'A daily dashboard with totals, topics and relevance filters, and every summary linked to the official text.',
+      },
+      {
+        es: 'Los criterios de relevancia están a la vista, porque decidir qué es relevante también es una decisión política.',
+        en: 'The relevance criteria are public, because deciding what counts as relevant is a political choice too.',
+      },
+    ],
+    tags: [
+      { es: 'Boletín Oficial', en: 'Official Gazette' },
+      { es: 'IA aplicada', en: 'Applied AI' },
+      { es: 'Transparencia', en: 'Transparency' },
+    ],
+    site: 'https://boletin-monitor-nine.vercel.app',
+    repo: 'https://github.com/santiagodovalb/boletin-monitor',
+  },
 ];
 
 export const education = {
