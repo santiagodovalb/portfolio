@@ -164,32 +164,28 @@ export default function App() {
 function ProjectCard({ project: p, t }: { project: Project; t: (l: L) => string }) {
   return (
     <article className="project reveal" id={p.id}>
-      <a className="project-visual" href={p.site} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden>
-        <img src={p.image} alt="" />
-      </a>
-      <div className="project-body">
+      <header className="project-head">
+        <img className="project-icon" src={p.image} alt="" />
         <h3>{p.name}</h3>
-        <p className="project-tagline">{t(p.tagline)}</p>
-        <ul>
-          {p.bullets.map((b) => (
-            <li key={b.en}>{t(b)}</li>
-          ))}
-        </ul>
-        <div className="project-foot">
-          <div className="tags">
-            {p.tags.map((tag) => (
-              <span key={tag.en}>{t(tag)}</span>
-            ))}
-          </div>
-          <div className="actions">
-            <a className="btn primary" href={p.site} target="_blank" rel="noreferrer">
-              {t(copy.visit)} ↗
-            </a>
-            <a className="btn" href={p.repo} target="_blank" rel="noreferrer">
-              {t(copy.code)} ↗
-            </a>
-          </div>
-        </div>
+        <nav className="project-links">
+          <a href={p.site} target="_blank" rel="noreferrer">
+            {t(copy.visit)} ↗
+          </a>
+          <a href={p.repo} target="_blank" rel="noreferrer">
+            {t(copy.code)} ↗
+          </a>
+        </nav>
+      </header>
+      <p className="project-tagline">{t(p.tagline)}</p>
+      <ul>
+        {p.bullets.map((b) => (
+          <li key={b.en}>{t(b)}</li>
+        ))}
+      </ul>
+      <div className="tags">
+        {p.tags.map((tag) => (
+          <span key={tag.en}>{t(tag)}</span>
+        ))}
       </div>
     </article>
   );

@@ -281,61 +281,62 @@ h2 {
   margin: 16px 0 48px;
 }
 
-/* projects */
+/* projects: full-width rows, small icon beside the title */
 .project {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 40px;
-  align-items: center;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 32px;
+  border-radius: 16px;
+  padding: 24px 28px;
   scroll-margin-top: 80px;
 }
 .project + .project {
-  margin-top: 24px;
+  margin-top: 16px;
 }
-.project-visual {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 4 / 3;
-  border-radius: 12px;
-  background: var(--bg);
-  border: 1px solid var(--line);
+.project-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
 }
-.project-visual img {
-  width: 72%;
-  height: auto;
-  transition: transform 0.3s;
-}
-.project-visual:hover img {
-  transform: scale(1.04);
+.project-icon {
+  height: 28px;
+  width: auto;
+  flex: none;
 }
 .project h3 {
   margin: 0;
-  font: 400 clamp(32px, 4vw, 44px) / 1 var(--serif);
+  font: 400 clamp(26px, 3vw, 32px) / 1.1 var(--serif);
+}
+.project-links {
+  margin-left: auto;
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.project-links a {
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.project-links a:hover {
+  text-decoration: underline;
 }
 .project-tagline {
-  margin: 12px 0 0;
-  font-size: 18px;
+  margin: 10px 0 0;
+  font-size: 17px;
 }
 .project ul {
-  margin: 16px 0 0;
+  margin: 12px 0 0;
   padding-left: 18px;
   color: var(--muted);
   font-size: 15px;
 }
 .project li + li {
-  margin-top: 6px;
+  margin-top: 4px;
 }
-.project-foot {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  margin-top: 24px;
+.project .tags {
+  margin-top: 16px;
 }
 .tags {
   display: flex;
@@ -492,11 +493,6 @@ h2 {
     grid-template-columns: 1fr;
     padding-top: 56px;
   }
-  .project {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 24px;
-  }
   .work {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -528,5 +524,9 @@ h2 {
   }
   .project {
     padding: 18px;
+  }
+  .project-links {
+    margin-left: 0;
+    width: 100%;
   }
 }
