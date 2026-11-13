@@ -3,8 +3,8 @@ export type L = Record<Lang, string>;
 
 export const stackGroups = {
   'Web & mobile': ['React', 'Next.js', 'React Native', 'TypeScript', 'Redux', 'MUI'],
-  'Backend & data': ['Node.js', 'PostgreSQL'],
-  'Quality & AI': ['Claude Code', 'Jest', 'Cypress', 'Turborepo'],
+  'Backend & data': ['Node.js', 'PostgreSQL', 'Firebase'],
+  'Quality & AI': ['Claude Code', 'Jest', 'Cypress', 'New Relic', 'Turborepo'],
 } as const;
 
 export type Group = keyof typeof stackGroups;
@@ -12,10 +12,10 @@ export type Tech = (typeof stackGroups)[Group][number];
 
 export const copy = {
   nav: { ai: { en: 'AI workflow', es: 'Flujo con IA' }, work: { en: 'Experience', es: 'Experiencia' }, contact: { en: 'Contact', es: 'Contacto' } },
-  eyebrow: { en: 'Full-stack engineer · Buenos Aires', es: 'Ingeniero full-stack · Buenos Aires' },
+  eyebrow: { en: 'Frontend & product engineer · Buenos Aires', es: 'Ingeniero frontend y de producto · Buenos Aires' },
   lead: {
-    en: 'I build fintech products across web and mobile with React, Next.js, React Native and Node, and the Claude Code workflows that take them from ticket to production.',
-    es: 'Construyo productos fintech en web y mobile con React, Next.js, React Native y Node, y los flujos con Claude Code que los llevan del ticket a producción.',
+    en: 'I build web and mobile products with React, Next.js and React Native, owning features from idea to production, from consumer lending to sports data. I also build the Claude Code workflows that ship them.',
+    es: 'Construyo productos web y mobile con React, Next.js y React Native, y me hago cargo de las features desde la idea hasta producción, de préstamos al consumo a estadísticas deportivas. También armo los flujos con Claude Code que las entregan.',
   },
   seeWork: { en: 'See my work', es: 'Ver mi trabajo' },
   getInTouch: { en: 'Get in touch', es: 'Contactame' },
@@ -108,37 +108,47 @@ export const items: Item[] = [
     org: 'Directo · Arcadia Tech',
     period: { en: '2024 — now', es: '2024 — hoy' },
     summary: {
-      en: 'Frontend platform for a payments fintech serving merchants and their customers.',
-      es: 'Plataforma frontend de una fintech de pagos para comercios y sus clientes.',
+      en: 'Consumer-lending fintech: installment purchases at merchants, digital and cash loans. Core engineer on a three-person frontend team, with 400+ commits across six Next.js apps and a React Native app.',
+      es: 'Fintech de préstamos al consumo: compras en cuotas en comercios, préstamos digitales y en efectivo. Ingeniero central en un equipo frontend de tres personas, con más de 400 commits en seis apps Next.js y una app React Native.',
     },
     bullets: [
       {
-        en: 'Build and maintain six Next.js apps (merchants, customers, onboarding, backoffice, prospects and a Tienda Nube integration) plus the React Native customer app, in one Turborepo monorepo with shared UI and typed API packages.',
-        es: 'Desarrollo y mantengo seis apps en Next.js (comercios, clientes, onboarding, backoffice, prospectos y una integración con Tienda Nube) y la app de clientes en React Native, en un monorepo Turborepo con paquetes compartidos de UI y APIs tipadas.',
+        en: 'Created the backoffice and merchant-prospects apps from scratch: OTP login, document upload and review, prospect editing and filters, and streamed downloads that work around file-size limits.',
+        es: 'Creé desde cero las apps de backoffice y de prospectos comerciales: login con OTP, carga y revisión de documentos, edición y filtros de prospectos, y descargas por stream que esquivan los límites de tamaño.',
       },
       {
-        en: 'Wrote the team’s Claude Code skills that take a Jira ticket to a pull request: /start reads, assigns and branches; /ship runs tests, lint and a conventions review, commits, opens the PR and reports back to Jira.',
-        es: 'Escribí las skills de Claude Code del equipo que llevan un ticket de Jira a un pull request: /start lee, asigna y crea el branch; /ship corre tests, lint y revisión de convenciones, commitea, abre el PR y actualiza Jira.',
+        en: 'Shipped merchant onboarding, loan and installment flows, customer operations with PDF/CSV exports, and the Tienda Nube e-commerce integration.',
+        es: 'Entregué el onboarding de comercios, los flujos de préstamos y cuotas, las operaciones de clientes con exportación a PDF/CSV y la integración con Tienda Nube.',
       },
       {
-        en: 'Work daily with a shared agent toolkit: subagents for test runs, convention reviews, UI copy audits and New Relic production triage that feeds the backlog.',
-        es: 'Trabajo a diario con un kit de agentes compartido: subagentes para correr tests, revisar convenciones, auditar textos de UI y hacer triage de producción en New Relic que alimenta el backlog.',
+        en: 'Made the React Native app faster at startup and between tabs by deferring screen mounts, and added Android deep linking and Firebase push notifications.',
+        es: 'Hice más rápida la app React Native al iniciar y al cambiar de tab difiriendo el montaje de pantallas, y sumé deep linking en Android y push notifications con Firebase.',
       },
       {
-        en: '400+ commits across web and mobile, with Jest unit tests and Cypress E2E on critical flows.',
-        es: 'Más de 400 commits entre web y mobile, con tests unitarios en Jest y E2E en Cypress sobre los flujos críticos.',
+        en: 'Instrumented the apps with New Relic error events, the production signal the team’s automated triage now runs on.',
+        es: 'Instrumenté las apps con eventos de error en New Relic, la señal de producción sobre la que hoy corre el triage automatizado del equipo.',
+      },
+      {
+        en: 'Wrote the team’s Claude Code skills that take a Jira ticket to a reviewed pull request (/start, /ship), and work daily with shared subagents for testing, convention review and production triage.',
+        es: 'Escribí las skills de Claude Code del equipo que llevan un ticket de Jira a un pull request revisado (/start, /ship), y trabajo a diario con subagentes compartidos para tests, revisión de convenciones y triage de producción.',
       },
     ],
-    stack: ['Next.js', 'React', 'React Native', 'TypeScript', 'Redux', 'MUI', 'Jest', 'Cypress', 'Turborepo', 'Claude Code'],
+    stack: ['Next.js', 'React', 'React Native', 'TypeScript', 'Redux', 'MUI', 'Firebase', 'Jest', 'Cypress', 'New Relic', 'Turborepo', 'Claude Code'],
   },
   {
     title: fullStack,
     org: 'Librodepases',
     period: same('2023 — 2024'),
-    summary: { en: 'Football statistics web app.', es: 'Aplicación web de estadísticas de fútbol.' },
+    summary: { en: 'Football analytics platform.', es: 'Plataforma de estadísticas de fútbol.' },
     bullets: [
-      { en: 'Owned the player comparison feature end to end.', es: 'Owner de punta a punta de la comparación de jugadores.' },
-      { en: 'Continuous integration with the stats REST API.', es: 'Integración continua con la API REST de estadísticas.' },
+      {
+        en: 'Built player comparison from scratch, a new feature that became a selling point of the product, covering players and teams from every league in the world.',
+        es: 'Construí desde cero la comparación de jugadores, una feature nueva que se volvió un diferencial del producto, con jugadores y equipos de todas las ligas del mundo.',
+      },
+      {
+        en: 'Kept the web app in step with an evolving stats REST API, shipping new views as data was added.',
+        es: 'Mantuve la web al día con una API REST de estadísticas en evolución, sumando vistas a medida que llegaban nuevos datos.',
+      },
     ],
     stack: ['React', 'TypeScript'],
   },
@@ -146,11 +156,20 @@ export const items: Item[] = [
     title: fullStack,
     org: 'Sportclub',
     period: same('2023'),
-    summary: { en: 'Customer app for a gym network.', es: 'App de clientes para una red de gimnasios.' },
+    summary: {
+      en: 'Customer app for one of Argentina’s largest gym networks.',
+      es: 'App de clientes para una de las redes de gimnasios más grandes de Argentina.',
+    },
     bullets: [
-      { en: 'Led the frontend and backend teams.', es: 'Lideré los equipos de frontend y backend.' },
-      { en: 'Built the customer mobile app.', es: 'Desarrollé la app mobile de clientes.' },
-      { en: 'Set up the microservices structure.', es: 'Armé la estructura de microservicios.' },
+      {
+        en: 'Led a team of six (three frontend, three backend) to ship the customer app, now in production and used by thousands of members.',
+        es: 'Lideré un equipo de seis personas (tres frontend, tres backend) hasta lanzar la app de clientes, hoy en producción y usada por miles de socios.',
+      },
+      { en: 'Built the React Native app members use day to day.', es: 'Desarrollé la app React Native que usan los socios a diario.' },
+      {
+        en: 'Designed the microservices layout behind it.',
+        es: 'Diseñé la estructura de microservicios que la sostiene.',
+      },
     ],
     stack: ['React Native', 'Node.js', 'TypeScript'],
   },
@@ -159,19 +178,19 @@ export const items: Item[] = [
     org: 'Altimetrik',
     period: same('2022'),
     summary: {
-      en: 'Investor-facing site for Putnam Investments, a US fintech.',
-      es: 'Sitio para inversores de Putnam Investments, una fintech de EE. UU.',
+      en: 'Contractor for Putnam Investments, a US asset manager.',
+      es: 'Contratista para Putnam Investments, gestora de inversiones de EE. UU.',
     },
     bullets: [
       {
-        en: 'Server-side rendered React frontend, unit tests on every component.',
-        es: 'Frontend en React con server-side rendering y tests unitarios en cada componente.',
+        en: 'Built features for the server-rendered React site investors use to manage their accounts, with unit tests on every component.',
+        es: 'Desarrollé features del sitio React con server-side rendering donde los inversores gestionan sus cuentas, con tests unitarios en cada componente.',
       },
       {
-        en: 'Picked up Node backend tickets and demoed features to the client.',
-        es: 'Tomé tickets de backend en Node y presenté features al cliente.',
+        en: 'Took Node backend tickets and presented finished features in client demos.',
+        es: 'Tomé tickets de backend en Node y presenté las features terminadas en demos con el cliente.',
       },
-      { en: 'Supported junior developers.', es: 'Acompañé a desarrolladores junior.' },
+      { en: 'Mentored junior developers on the team.', es: 'Acompañé a los desarrolladores junior del equipo.' },
     ],
     stack: ['React', 'TypeScript', 'Node.js', 'Jest'],
   },
@@ -180,14 +199,21 @@ export const items: Item[] = [
     org: 'Plataforma 5',
     period: same('2021'),
     summary: {
-      en: 'Mentored students through their professional projects.',
-      es: 'Mentoría técnica a alumnos en sus proyectos profesionales.',
+      en: 'Intensive full-stack JavaScript bootcamp.',
+      es: 'Bootcamp intensivo de JavaScript full-stack.',
     },
     bullets: [
-      { en: 'Reviewed and graded exams and projects.', es: 'Corrección y devolución de evaluaciones y proyectos.' },
       {
-        en: 'Built an internal web app for students and assistants.',
-        es: 'Desarrollé una aplicación web interna para alumnos y asistentes.',
+        en: 'Mentored about 30 students through their full-stack projects with React, Node and SQL.',
+        es: 'Acompañé a unos 30 alumnos en sus proyectos full-stack con React, Node y SQL.',
+      },
+      {
+        en: 'Reviewed and graded exams and projects with written feedback.',
+        es: 'Corregí exámenes y proyectos con devoluciones escritas.',
+      },
+      {
+        en: 'Built the internal office-hours app students and assistants used to request and run help sessions.',
+        es: 'Desarrollé la app interna de consultas que usaban alumnos y asistentes para pedir y dar ayuda.',
       },
     ],
     stack: ['React', 'Redux', 'Node.js', 'PostgreSQL'],
