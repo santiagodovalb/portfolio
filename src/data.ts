@@ -21,13 +21,6 @@ export const copy = {
     { value: same('UBA'), label: { es: 'Ciencia Política, desde 2022', en: 'Political Science, since 2022' } },
     { value: same('720'), label: { es: 'votaciones del Congreso analizadas', en: 'roll-call votes analyzed' } },
   ],
-  areasTitle: { es: 'Áreas de interés', en: 'Areas of interest' },
-  seeProject: { es: 'Ver proyecto', en: 'See project' },
-  studying: { es: 'Área de estudio', en: 'Area of study' },
-  projectsLead: {
-    es: 'Herramientas cívicas con datos abiertos, con el método y sus límites a la vista.',
-    en: 'Civic tools built on open data, with the method and its limits in plain sight.',
-  },
   visit: { es: 'Ver el sitio', en: 'Visit the site' },
   code: { es: 'Código', en: 'Code' },
   education: { es: 'Formación', en: 'Education' },
@@ -50,41 +43,12 @@ export const copy = {
   },
 };
 
-/** The three areas the portfolio is organized around. `project` links to the evidence, when there is some. */
-export const areas: { title: L; text: L; project?: string }[] = [
-  {
-    title: { es: 'Investigación de políticas basada en datos', en: 'Data-driven policy research' },
-    text: {
-      es: 'Preguntas sobre las instituciones respondidas con datos abiertos: cómo votan los bloques, qué decide el Estado y a quién afecta.',
-      en: 'Questions about institutions answered with open data: how blocs vote, what the state decides and who it affects.',
-    },
-    project: 'como-vota',
-  },
-  {
-    title: { es: 'Visualización de datos sociales', en: 'Social data visualization' },
-    text: {
-      es: 'Gráficos que hacen legible la información pública para cualquiera, no solo para especialistas.',
-      en: 'Charts that make public information legible to anyone, not just specialists.',
-    },
-    project: 'como-vota',
-  },
-  {
-    title: { es: 'Gobernanza de la IA', en: 'AI governance' },
-    text: {
-      es: 'Cómo los distintos Estados regulan la inteligencia artificial, comparando sus enfoques. Lo miro desde la práctica: construyo con agentes de IA todos los días.',
-      en: 'How different states regulate artificial intelligence, comparing their approaches. I look at it from practice: I build with AI agents every day.',
-    },
-    project: 'ia-regulacion',
-  },
-];
 
 export type Project = {
   id: string;
   name: string;
   image: string;
   tagline: L;
-  bullets: L[];
-  tags: L[];
   site: string;
   repo: string;
 };
@@ -98,25 +62,6 @@ export const projects: Project[] = [
       es: 'Cómo votan los bloques del Congreso argentino y quién vota en disidencia, votación por votación.',
       en: "How the blocs in Argentina's Congress vote and who dissents, one roll call at a time.",
     },
-    bullets: [
-      {
-        es: 'Composición actual de Diputados (257 bancas) y del Senado (72) en un hemiciclo interactivo.',
-        en: 'Current composition of the Chamber of Deputies (257 seats) and the Senate (72) in an interactive seat chart.',
-      },
-      {
-        es: '720 votaciones nominales desde 2024, cada una con su desglose por bloque.',
-        en: '720 roll-call votes since 2024, each broken down by bloc.',
-      },
-      {
-        es: 'Tasa de disidencia por legislador, con el método y sus límites explicados: la fuente no registra todos los cambios de bloque, y el cálculo lo tiene en cuenta en lugar de inventar disidencias.',
-        en: "A dissent rate for every legislator, with the method and its limits explained: the source doesn't record every bloc switch, and the calculation accounts for that instead of inventing dissent.",
-      },
-    ],
-    tags: [
-      { es: 'Datos abiertos', en: 'Open data' },
-      { es: 'Visualización', en: 'Visualization' },
-      { es: 'Congreso', en: 'Congress' },
-    ],
     site: 'https://congreso-tracker.vercel.app',
     repo: 'https://github.com/santiagodovalb/congreso-tracker',
   },
@@ -128,25 +73,6 @@ export const projects: Project[] = [
       es: 'Cómo regulan la inteligencia artificial seis países de América Latina, comparados con la Unión Europea, Estados Unidos y China.',
       en: 'How six Latin American countries regulate artificial intelligence, compared with the European Union, the United States and China.',
     },
-    bullets: [
-      {
-        es: 'Un globo interactivo y una escala ubican a cada país según qué tan vinculante es su regulación: de estrategias sin ley a una ley general vigente.',
-        en: 'An interactive globe and a scale place each country by how binding its regulation is: from strategies with no law to a general law in force.',
-      },
-      {
-        es: 'Fichas comparables por país: enfoque, usos prohibidos, reglas para IA generativa, autoridad de aplicación e instrumentos clave.',
-        en: 'Comparable profiles for every country: approach, banned uses, generative AI rules, enforcement authority and key instruments.',
-      },
-      {
-        es: 'Cada ficha enlaza sus fuentes oficiales y marca lo que todavía falta confirmar.',
-        en: 'Every profile links its official sources and flags what still needs to be confirmed.',
-      },
-    ],
-    tags: [
-      { es: 'Gobernanza de la IA', en: 'AI governance' },
-      { es: 'Política comparada', en: 'Comparative policy' },
-      { es: 'América Latina', en: 'Latin America' },
-    ],
     site: 'https://ia-regulacion.vercel.app',
     repo: 'https://github.com/santiagodovalb/ia-regulacion',
   },
@@ -158,25 +84,6 @@ export const projects: Project[] = [
       es: 'Cada norma que publica el Estado nacional, resumida en castellano simple y ordenada según cuánto afecta a la gente.',
       en: 'Every rule Argentina’s national government publishes, summarized in plain Spanish and ranked by how much it affects people.',
     },
-    bullets: [
-      {
-        es: 'Toma la Primera sección del Boletín Oficial (leyes, decretos y resoluciones) y resume cada norma con IA según un esquema fijo: tema, tipo de medida, a quién afecta y relevancia.',
-        en: 'Takes the first section of the Official Gazette (laws, decrees and resolutions) and summarizes every rule with AI using a fixed schema: topic, type of measure, who it affects and relevance.',
-      },
-      {
-        es: 'Un tablero por día con totales, temas y filtros por relevancia, y cada resumen enlazado al texto oficial.',
-        en: 'A daily dashboard with totals, topics and relevance filters, and every summary linked to the official text.',
-      },
-      {
-        es: 'Los criterios de relevancia están a la vista, porque decidir qué es relevante también es una decisión política.',
-        en: 'The relevance criteria are public, because deciding what counts as relevant is a political choice too.',
-      },
-    ],
-    tags: [
-      { es: 'Boletín Oficial', en: 'Official Gazette' },
-      { es: 'IA aplicada', en: 'Applied AI' },
-      { es: 'Transparencia', en: 'Transparency' },
-    ],
     site: 'https://boletin-monitor-nine.vercel.app',
     repo: 'https://github.com/santiagodovalb/boletin-monitor',
   },

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { areas, copy, education, items, projects, tools, type Item, type L, type Lang, type Project } from './data';
+import { copy, education, items, projects, tools, type Item, type L, type Lang, type Project } from './data';
 
 const EMAIL = 'santiagodovalb@gmail.com';
 const GITHUB = 'https://github.com/santiagodovalb';
@@ -85,36 +85,15 @@ export default function App() {
           </dl>
         </div>
 
-        <section className="areas" aria-labelledby="areas-title">
-          <h2 id="areas-title" className="areas-title">
-            {t(copy.areasTitle)}
+        <section className="hero-projects" id="projects" aria-labelledby="projects-title">
+          <h2 id="projects-title" className="kicker">
+            {t(copy.nav.projects)}
           </h2>
-          <ol>
-            {areas.map((a, i) => (
-              <li key={a.title.en}>
-                <span className="area-n">0{i + 1}</span>
-                <h3>{t(a.title)}</h3>
-                <p>{t(a.text)}</p>
-                {a.project ? (
-                  <a className="area-link" href={`#${a.project}`}>
-                    {t(copy.seeProject)} →
-                  </a>
-                ) : (
-                  <span className="area-status">{t(copy.studying)}</span>
-                )}
-              </li>
-            ))}
-          </ol>
+          {projects.map((p) => (
+            <ProjectCard key={p.id} project={p} t={t} />
+          ))}
         </section>
       </header>
-
-      <section className="wrap section" id="projects">
-        <h2>{t(copy.nav.projects)}</h2>
-        <p className="section-lead">{t(copy.projectsLead)}</p>
-        {projects.map((p) => (
-          <ProjectCard key={p.id} project={p} t={t} />
-        ))}
-      </section>
 
       <section className="wrap section" id="work">
         <h2>{t(copy.nav.work)}</h2>
@@ -167,26 +146,16 @@ function ProjectCard({ project: p, t }: { project: Project; t: (l: L) => string 
       <header className="project-head">
         <img className="project-icon" src={p.image} alt="" />
         <h3>{p.name}</h3>
-        <nav className="project-links">
-          <a href={p.site} target="_blank" rel="noreferrer">
-            {t(copy.visit)} ↗
-          </a>
-          <a href={p.repo} target="_blank" rel="noreferrer">
-            {t(copy.code)} ↗
-          </a>
-        </nav>
       </header>
       <p className="project-tagline">{t(p.tagline)}</p>
-      <ul>
-        {p.bullets.map((b) => (
-          <li key={b.en}>{t(b)}</li>
-        ))}
-      </ul>
-      <div className="tags">
-        {p.tags.map((tag) => (
-          <span key={tag.en}>{t(tag)}</span>
-        ))}
-      </div>
+      <nav className="project-links">
+        <a href={p.site} target="_blank" rel="noreferrer">
+          {t(copy.visit)} ↗
+        </a>
+        <a href={p.repo} target="_blank" rel="noreferrer">
+          {t(copy.code)} ↗
+        </a>
+      </nav>
     </article>
   );
 }
