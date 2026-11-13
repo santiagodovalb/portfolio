@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { items, stackGroups, type Item, type Tech } from './data';
+import { useEffect, useState } from 'react';
+import { copy, flow, items, stackGroups, type Group, type Item, type L, type Lang, type Tech } from './data';
 
 const EMAIL = 'santiagodovalb@gmail.com';
 const GITHUB = 'https://github.com/santiagodovalb';
 const LINKEDIN = 'https://www.linkedin.com/in/santiagodovalb/';
 
-// Illustrative session shown in the hero terminal.
+// Illustrative session shown in the hero terminal. Terminal output stays in English in both languages.
 const session = [
   ['cmd', '/start FRON-482'],
   ['out', 'Read ticket “Show pending transfers on home”'],
@@ -18,46 +18,48 @@ const session = [
   ['ok', 'PR opened → develop · Jira updated'],
 ] as const;
 
-const flow = [
-  {
-    step: 'Ticket → branch',
-    cmd: '/start',
-    text: 'Reads the Jira ticket, assigns it, moves it to In progress and cuts the branch from develop. Without a ticket, it drafts one.',
-    mine: true,
-  },
-  {
-    step: 'Build with guardrails',
-    cmd: 'CLAUDE.md + subagents',
-    text: 'The agent works inside the monorepo’s written conventions. Subagents run Jest and ESLint and review the diff against team rules before anything leaves my machine.',
-  },
-  {
-    step: 'Branch → PR',
-    cmd: '/ship',
-    text: 'Tests, lint and the conventions review, a Conventional Commit with the ticket key, the PR to develop and a comment back on the ticket.',
-    mine: true,
-  },
-  {
-    step: 'Production → backlog',
-    cmd: 'nr-triage',
-    text: 'Agents read New Relic, compare against last week, rank regressions and conversion drops, and file tickets that come back into the loop.',
-  },
-];
+function initialLang(): Lang {
+  try {
+    const saved = localStorage.getItem('lang');
+    if (saved === 'en' || saved === 'es') return saved;
+  } catch {}
+  return navigator.language.startsWith('es') ? 'es' : 'en';
+}
 
 export default function App() {
+  const [lang, setLang] = useState<Lang>(initialLang);
   const [selected, setSelected] = useState<Set<Tech>>(new Set());
+  const [theme, setTheme] = useState(
+    () => document.documentElement.dataset.theme ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'),
+  );
+  const t = (l: L) => l[lang];
 
-  const toggle = (t: Tech) =>
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem('theme', next);
+    } catch {}
+  };
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    try {
+      localStorage.setItem('lang', lang);
+    } catch {}
+  }, [lang]);
+
+  const toggle = (tech: Tech) =>
     setSelected((prev) => {
       const next = new Set(prev);
-      next.has(t) ? next.delete(t) : next.add(t);
+      next.has(tech) ? next.delete(tech) : next.add(tech);
       return next;
     });
 
   // Match any checked tech; nothing checked shows everything.
-  const visible = items.filter((i) => selected.size === 0 || i.stack.some((t) => selected.has(t)));
-  const jobs = visible.filter((i) => i.kind === 'job');
-  const projects = visible.filter((i) => i.kind === 'project');
-  const count = (t: Tech) => items.filter((i) => i.stack.includes(t)).length;
+  const visible = items.filter((i) => selected.size === 0 || i.stack.some((s) => selected.has(s)));
+  const count = (tech: Tech) => items.filter((i) => i.stack.includes(tech)).length;
 
   return (
     <>
@@ -66,47 +68,48 @@ export default function App() {
           Santiago Doval
         </a>
         <div className="nav-links">
-          <a href="#ai">AI workflow</a>
-          <a href="#work">Work</a>
-          <a href="#contact">Contact</a>
+          <a href="#ai">{t(copy.nav.ai)}</a>
+          <a href="#work">{t(copy.nav.work)}</a>
+          <a href="#contact">{t(copy.nav.contact)}</a>
+          <div className="lang" role="group" aria-label="Language / Idioma">
+            {(['en', 'es'] as const).map((l) => (
+              <button key={l} type="button" aria-pressed={lang === l} onClick={() => setLang(l)}>
+                {l.toUpperCase()}
+              </button>
+            ))}
+          </div>
+          <button type="button" className="theme" onClick={toggleTheme} aria-label={t(copy.themeLabel)}>
+            {theme === 'dark' ? '☀' : '☾'}
+          </button>
         </div>
       </nav>
 
       <header className="hero wrap" id="top">
         <div className="hero-text">
-          <p className="eyebrow">Full-stack engineer · Buenos Aires</p>
+          <p className="eyebrow">{t(copy.eyebrow)}</p>
           <h1>
             Santiago <em>Doval</em>
           </h1>
-          <p className="lead">
-            I build fintech products across web and mobile with React, Next.js, React Native and Node, and the Claude Code
-            workflows that take them from ticket to production.
-          </p>
+          <p className="lead">{t(copy.lead)}</p>
           <div className="actions">
             <a className="btn primary" href="#work">
-              See my work
+              {t(copy.seeWork)}
             </a>
             <a className="btn" href={`mailto:${EMAIL}`}>
-              Get in touch
+              {t(copy.getInTouch)}
             </a>
           </div>
           <dl className="stats">
-            <div>
-              <dt>5+ years</dt>
-              <dd>shipping production software</dd>
-            </div>
-            <div>
-              <dt>7 apps</dt>
-              <dd>web and mobile at Directo</dd>
-            </div>
-            <div>
-              <dt>Daily</dt>
-              <dd>Claude Code in the loop</dd>
-            </div>
+            {copy.stats.map((s) => (
+              <div key={s.label.en}>
+                <dt>{t(s.value)}</dt>
+                <dd>{t(s.label)}</dd>
+              </div>
+            ))}
           </dl>
         </div>
 
-        <figure className="terminal" aria-label="Example Claude Code session">
+        <figure className="terminal" aria-label={t(copy.terminalLabel)}>
           <div className="terminal-bar">
             <span />
             <span />
@@ -121,78 +124,68 @@ export default function App() {
             ))}
             <li className="cursor" style={{ '--i': session.length } as React.CSSProperties} aria-hidden />
           </ol>
-          <figcaption>Illustrative session</figcaption>
+          <figcaption>{t(copy.illustrative)}</figcaption>
         </figure>
       </header>
 
       <section className="wrap section" id="ai">
-        <h2>How I ship with agents</h2>
-        <p className="section-lead">
-          The point isn’t writing less code. It’s spending my attention on product decisions and review, and letting the
-          repetitive parts run automated and checked.
-        </p>
+        <h2>{t(copy.aiTitle)}</h2>
+        <p className="section-lead">{t(copy.aiLead)}</p>
         <ol className="flow">
           {flow.map((f, i) => (
-            <li key={f.step} className="reveal">
+            <li key={f.cmd} className="reveal">
               <span className="flow-n">0{i + 1}</span>
-              <h3>{f.step}</h3>
+              <h3>{t(f.step)}</h3>
               <code>{f.cmd}</code>
-              <p>{f.text}</p>
-              {f.mine && <span className="badge">I wrote this skill</span>}
+              <p>{t(f.text)}</p>
+              {f.mine && <span className="badge">{t(copy.wroteSkill)}</span>}
             </li>
           ))}
         </ol>
       </section>
 
       <section className="wrap section" id="work">
-        <h2>Work</h2>
-        <p className="section-lead">Check the tools you’re hiring for. Experience and projects filter live.</p>
+        <h2>{t(copy.nav.work)}</h2>
+        <p className="section-lead">{t(copy.workLead)}</p>
 
         <div className="work">
           <aside className="filter">
             {Object.entries(stackGroups).map(([group, techs]) => (
               <fieldset key={group}>
-                <legend>{group}</legend>
-                {techs.map((t) => (
-                  <label key={t} className="check">
-                    <input type="checkbox" checked={selected.has(t)} onChange={() => toggle(t)} />
-                    <span>{t}</span>
-                    <small>{count(t)}</small>
+                <legend>{t(copy.groups[group as Group])}</legend>
+                {techs.map((tech) => (
+                  <label key={tech} className="check">
+                    <input type="checkbox" checked={selected.has(tech)} onChange={() => toggle(tech)} />
+                    <span>{tech}</span>
+                    <small>{count(tech)}</small>
                   </label>
                 ))}
               </fieldset>
             ))}
             <div className="filter-foot">
               <span aria-live="polite">
-                {visible.length} of {items.length}
+                {visible.length} {t(copy.of)} {items.length}
               </span>
               {selected.size > 0 && (
                 <button type="button" onClick={() => setSelected(new Set())}>
-                  Clear
+                  {t(copy.clear)}
                 </button>
               )}
             </div>
           </aside>
 
           <div className="results">
-            {jobs.length > 0 && <h3 className="results-h">Experience</h3>}
-            {jobs.map((i) => (
-              <Card key={i.org} item={i} selected={selected} toggle={toggle} />
+            {visible.map((i) => (
+              <Card key={i.org} item={i} t={t} selected={selected} toggle={toggle} />
             ))}
-            {projects.length > 0 && <h3 className="results-h">Projects</h3>}
-            <div className="grid">
-              {projects.map((i) => (
-                <Card key={i.title} item={i} selected={selected} toggle={toggle} />
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
       <footer className="wrap contact" id="contact">
-        <img src="/avatar.png" alt="Illustrated portrait of Santiago" width={160} height={160} />
+        <img src="/avatar.png" alt={t(copy.avatarAlt)} width={160} height={160} />
         <h2>
-          Let’s build <em>something.</em>
+          {t(copy.contactTitle)} <em>{t(copy.contactEm)}</em>
         </h2>
         <a className="email" href={`mailto:${EMAIL}`}>
           {EMAIL}
@@ -205,38 +198,34 @@ export default function App() {
             LinkedIn
           </a>
         </div>
-        <p className="colophon">Built with React, TypeScript and Vite. Pair-programmed with Claude Code.</p>
+        <p className="colophon">{t(copy.colophon)}</p>
       </footer>
     </>
   );
 }
 
-function Card({ item, selected, toggle }: { item: Item; selected: Set<Tech>; toggle: (t: Tech) => void }) {
-  const Title = item.url ? 'a' : 'span';
+type CardProps = { item: Item; t: (l: L) => string; selected: Set<Tech>; toggle: (tech: Tech) => void };
+
+function Card({ item, t, selected, toggle }: CardProps) {
   return (
-    <article className={`card reveal ${item.kind}`}>
+    <article className="card reveal">
       <header>
-        <h4>
-          <Title {...(item.url && { href: item.url, target: '_blank', rel: 'noreferrer' })}>
-            {item.kind === 'job' ? item.org : item.title}
-            {item.url && ' ↗'}
-          </Title>
-        </h4>
-        <span className="period">{item.period}</span>
+        <h4>{item.org}</h4>
+        <span className="period">{t(item.period)}</span>
       </header>
-      {item.kind === 'job' && <p className="role">{item.title}</p>}
-      <p>{item.summary}</p>
+      <p className="role">{t(item.title)}</p>
+      <p>{t(item.summary)}</p>
       {item.bullets && (
         <ul>
           {item.bullets.map((b) => (
-            <li key={b}>{b}</li>
+            <li key={b.en}>{t(b)}</li>
           ))}
         </ul>
       )}
       <div className="tags">
-        {item.stack.map((t) => (
-          <button key={t} type="button" aria-pressed={selected.has(t)} onClick={() => toggle(t)}>
-            {t}
+        {item.stack.map((tech) => (
+          <button key={tech} type="button" aria-pressed={selected.has(tech)} onClick={() => toggle(tech)}>
+            {tech}
           </button>
         ))}
       </div>
