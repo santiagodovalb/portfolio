@@ -293,6 +293,9 @@ h2 {
   padding: 32px;
   scroll-margin-top: 80px;
 }
+.project + .project {
+  margin-top: 24px;
+}
 .project-visual {
   display: grid;
   place-items: center;

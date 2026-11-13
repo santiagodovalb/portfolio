@@ -74,6 +74,7 @@ export const areas: { title: L; text: L; project?: string }[] = [
       es: 'Cómo los distintos Estados regulan la inteligencia artificial, comparando sus enfoques. Lo miro desde la práctica: construyo con agentes de IA todos los días.',
       en: 'How different states regulate artificial intelligence, comparing their approaches. I look at it from practice: I build with AI agents every day.',
     },
+    project: 'ia-regulacion',
   },
 ];
 
@@ -118,6 +119,36 @@ export const projects: Project[] = [
     ],
     site: 'https://congreso-tracker.vercel.app',
     repo: 'https://github.com/santiagodovalb/congreso-tracker',
+  },
+  {
+    id: 'ia-regulacion',
+    name: '¿Cómo se regula la IA?',
+    image: '/projects/ia-regulacion.svg',
+    tagline: {
+      es: 'Cómo regulan la inteligencia artificial seis países de América Latina, comparados con la Unión Europea, Estados Unidos y China.',
+      en: 'How six Latin American countries regulate artificial intelligence, compared with the European Union, the United States and China.',
+    },
+    bullets: [
+      {
+        es: 'Un globo interactivo y una escala ubican a cada país según qué tan vinculante es su regulación: de estrategias sin ley a una ley general vigente.',
+        en: 'An interactive globe and a scale place each country by how binding its regulation is: from strategies with no law to a general law in force.',
+      },
+      {
+        es: 'Fichas comparables por país: enfoque, usos prohibidos, reglas para IA generativa, autoridad de aplicación e instrumentos clave.',
+        en: 'Comparable profiles for every country: approach, banned uses, generative AI rules, enforcement authority and key instruments.',
+      },
+      {
+        es: 'Cada ficha enlaza sus fuentes oficiales y marca lo que todavía falta confirmar.',
+        en: 'Every profile links its official sources and flags what still needs to be confirmed.',
+      },
+    ],
+    tags: [
+      { es: 'Gobernanza de la IA', en: 'AI governance' },
+      { es: 'Política comparada', en: 'Comparative policy' },
+      { es: 'América Latina', en: 'Latin America' },
+    ],
+    site: 'https://ia-regulacion.vercel.app',
+    repo: 'https://github.com/santiagodovalb/ia-regulacion',
   },
 ];
 
