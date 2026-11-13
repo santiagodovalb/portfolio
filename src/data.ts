@@ -9,17 +9,15 @@ export const copy = {
     work: { es: 'Experiencia', en: 'Experience' },
     contact: { es: 'Contacto', en: 'Contact' },
   },
-  eyebrow: { es: 'Tecnología y política pública · Buenos Aires', en: 'Technology and public policy · Buenos Aires' },
+  eyebrow: { es: 'Ciencia política, IA y tecnología · Buenos Aires', en: 'Political science, AI and technology · Buenos Aires' },
   lead: {
     es: 'Ingeniero de software y estudiante de Ciencia Política. Construyo herramientas que convierten datos públicos en evidencia sobre cómo nos gobernamos.',
     en: 'Software engineer and political science student. I build tools that turn public data into evidence about how we are governed.',
   },
-  seeProjects: { es: 'Ver proyectos', en: 'See projects' },
   getInTouch: { es: 'Escribime', en: 'Get in touch' },
   stats: [
     { value: same('5+'), label: { es: 'años construyendo software', en: 'years building software' } },
     { value: same('UBA'), label: { es: 'Ciencia Política, desde 2022', en: 'Political Science, since 2022' } },
-    { value: same('720'), label: { es: 'votaciones del Congreso analizadas', en: 'roll-call votes analyzed' } },
   ],
   visit: { es: 'Ver el sitio', en: 'Visit the site' },
   code: { es: 'Código', en: 'Code' },
@@ -29,8 +27,7 @@ export const copy = {
     en: 'Five years shipping production software. What I bring to this stage: working with real data, leading teams and teaching.',
   },
   tools: { es: 'Herramientas', en: 'Tools' },
-  contactTitle: { es: 'Hablemos de', en: "Let's talk" },
-  contactEm: { es: 'datos públicos.', en: 'public data.' },
+  contactTitle: { es: 'Charlemos.', en: "Let's talk." },
   contactLead: {
     es: 'Abierto a colaborar con ONGs, centros de investigación, medios y equipos de gobierno.',
     en: 'Open to working with NGOs, think tanks, newsrooms and public sector teams.',

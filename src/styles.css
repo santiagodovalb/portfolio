@@ -131,9 +131,9 @@ em {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 56px;
-  align-items: center;
+  align-items: start; /* top-aligned, so "Proyectos" lines up with the eyebrow */
   padding-top: 96px;
-  padding-bottom: 96px;
+  /* No bottom padding: the next section's own top padding (96px) sets the gap. */
 }
 .eyebrow {
   font: 500 13px var(--mono);
@@ -200,7 +200,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
-  margin: 0 0 16px;
+  margin: 0 0 20px; /* same as .eyebrow */
 }
 
 /* sections */
@@ -408,8 +408,10 @@ h2 {
   }
 }
 @media (max-width: 640px) {
+  /* Sides only: the padding shorthand would also zero each section's top and bottom spacing. */
   .wrap {
-    padding: 0 16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .nav {
     padding: 12px 16px;

@@ -68,10 +68,7 @@ export default function App() {
           </h1>
           <p className="lead">{t(copy.lead)}</p>
           <div className="actions">
-            <a className="btn primary" href="#projects">
-              {t(copy.seeProjects)}
-            </a>
-            <a className="btn" href={`mailto:${EMAIL}`}>
+            <a className="btn primary" href={`mailto:${EMAIL}`}>
               {t(copy.getInTouch)}
             </a>
           </div>
@@ -120,7 +117,7 @@ export default function App() {
       <footer className="wrap contact" id="contact">
         <img src="/avatar.png" alt={t(copy.avatarAlt)} width={160} height={160} />
         <h2>
-          {t(copy.contactTitle)} <em>{t(copy.contactEm)}</em>
+          <em>{t(copy.contactTitle)}</em>
         </h2>
         <p className="contact-lead">{t(copy.contactLead)}</p>
         <a className="email" href={`mailto:${EMAIL}`}>
