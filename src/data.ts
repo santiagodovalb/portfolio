@@ -152,7 +152,7 @@ export const projects: Project[] = [
   },
   {
     id: 'boletin',
-    name: 'Boletín Oficial, en claro',
+    name: 'Boletín en criollo',
     image: '/projects/boletin.svg',
     tagline: {
       es: 'Cada norma que publica el Estado nacional, resumida en castellano simple y ordenada según cuánto afecta a la gente.',
