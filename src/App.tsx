@@ -163,7 +163,7 @@ export default function App() {
 
 function ProjectCard({ project: p, t }: { project: Project; t: (l: L) => string }) {
   return (
-    <article className="project reveal" id={p.id}>
+    <article className="project" id={p.id}>
       <header className="project-head">
         <img className="project-icon" src={p.image} alt="" />
         <h3>{p.name}</h3>
@@ -193,7 +193,7 @@ function ProjectCard({ project: p, t }: { project: Project; t: (l: L) => string 
 
 function Card({ item, t }: { item: Item; t: (l: L) => string }) {
   return (
-    <article className="card reveal">
+    <article className="card">
       <header>
         <h4>{item.org}</h4>
         <span className="period">{t(item.period)}</span>

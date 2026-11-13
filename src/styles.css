@@ -255,17 +255,6 @@ h1 {
   content: '✦ ';
   color: var(--accent);
 }
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 /* sections */
 .section {
   padding-top: 96px;
@@ -303,9 +292,11 @@ h2 {
   width: auto;
   flex: none;
 }
+/* Sans, not the display serif: Instrument Serif only reads well at large sizes. */
 .project h3 {
   margin: 0;
-  font: 400 clamp(26px, 3vw, 32px) / 1.1 var(--serif);
+  font: 600 clamp(22px, 2.6vw, 26px) / 1.2 var(--sans);
+  letter-spacing: -0.015em;
 }
 .project-links {
   margin-left: auto;
@@ -322,18 +313,27 @@ h2 {
 .project-links a:hover {
   text-decoration: underline;
 }
+/* Keep lines to a readable length (~70–75 characters) even though the row is full width.
+   (ch is the width of "0", wider than an average letter, so 58ch ≈ 72 characters.) */
+.project-tagline,
+.project ul {
+  max-width: 58ch;
+}
 .project-tagline {
   margin: 10px 0 0;
   font-size: 17px;
+  line-height: 1.5;
 }
 .project ul {
-  margin: 12px 0 0;
+  margin: 14px 0 0;
   padding-left: 18px;
-  color: var(--muted);
+  /* Between muted and full text: easier to read than muted, still quieter than the tagline. */
+  color: color-mix(in srgb, var(--text) 72%, var(--muted));
   font-size: 15px;
+  line-height: 1.65;
 }
 .project li + li {
-  margin-top: 4px;
+  margin-top: 6px;
 }
 .project .tags {
   margin-top: 16px;
@@ -464,15 +464,6 @@ h2 {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
-}
-
-/* scroll reveal, progressive enhancement */
-@supports (animation-timeline: view()) {
-  .reveal {
-    animation: appear linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 30%;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
