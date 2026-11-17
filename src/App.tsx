@@ -99,9 +99,13 @@ export default function App() {
         <div className="work">
           <aside className="side">
             <h3>{t(copy.education)}</h3>
-            <p className="edu-degree">{t(education.degree)}</p>
-            <p>{t(education.school)}</p>
-            <p className="period">{t(education.period)}</p>
+            {education.map((e) => (
+              <div className="edu" key={e.degree.en}>
+                <p className="edu-degree">{t(e.degree)}</p>
+                <p>{t(e.school)}</p>
+                <p className="period">{t(e.period)}</p>
+              </div>
+            ))}
             <h3>{t(copy.tools)}</h3>
             <p className="tools">{tools}</p>
           </aside>

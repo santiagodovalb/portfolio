@@ -86,11 +86,18 @@ export const projects: Project[] = [
   },
 ];
 
-export const education = {
-  degree: { es: 'Licenciatura en Ciencia Política', en: 'BA in Political Science' },
-  school: { es: 'Universidad de Buenos Aires (UBA)', en: 'University of Buenos Aires (UBA)' },
-  period: { es: '2022 — en curso', en: '2022 — in progress' },
-};
+export const education = [
+  {
+    degree: { es: 'Licenciatura en Ciencia Política', en: 'BA in Political Science' },
+    school: { es: 'Universidad de Buenos Aires (UBA)', en: 'University of Buenos Aires (UBA)' },
+    period: { es: '2022 — en curso', en: '2022 — in progress' },
+  },
+  {
+    degree: { es: 'Ciencia de datos', en: 'Data science' },
+    school: same('Digital House'),
+    period: same('2022'),
+  },
+];
 
 export const tools = 'TypeScript · React · Node.js · PostgreSQL · Claude API';
 
