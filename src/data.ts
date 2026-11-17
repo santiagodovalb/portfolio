@@ -23,8 +23,8 @@ export const copy = {
   code: { es: 'Código', en: 'Code' },
   education: { es: 'Formación', en: 'Education' },
   workLead: {
-    es: 'Cinco años llevando software a producción. Lo que me llevo a esta etapa: trabajar con datos reales, liderar equipos y enseñar.',
-    en: 'Five years shipping production software. What I bring to this stage: working with real data, leading teams and teaching.',
+    es: 'Cinco años llevando software a producción. Lo que me llevo a esta etapa: trabajar colaborativamente para construir herramientas con impacto real, a partir del trabajo con datos y tecnología de vanguardia.',
+    en: 'Five years shipping production software. What I bring to this stage: working with others to build tools with real impact, grounded in data and cutting-edge technology.',
   },
   tools: { es: 'Herramientas', en: 'Tools' },
   contactTitle: { es: 'Charlemos.', en: "Let's talk." },
