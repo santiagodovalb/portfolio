@@ -146,7 +146,12 @@ function ProjectCard({ project: p, t }: { project: Project; t: (l: L) => string 
     <article className="project" id={p.id}>
       <header className="project-head">
         <img className="project-icon" src={p.image} alt="" />
-        <h3>{p.name}</h3>
+        <h3>
+          {/* Its ::after stretches over the whole card, so the card opens the site. */}
+          <a className="project-main" href={p.site} target="_blank" rel="noreferrer">
+            {p.name}
+          </a>
+        </h3>
       </header>
       <p className="project-tagline">{t(p.tagline)}</p>
       <nav className="project-links">

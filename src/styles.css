@@ -240,6 +240,8 @@ h2 {
 
 /* projects: compact cards in the hero's right column */
 .project {
+  position: relative;
+  cursor: pointer;
   --pop: var(--tomato);
   background: var(--bg);
   border: 2px solid var(--text);
@@ -291,7 +293,26 @@ h2 {
   font-size: 14px;
   font-weight: 600;
 }
+.project-main {
+  text-decoration: none;
+}
+.project-main::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.project-main:focus-visible {
+  outline: none;
+}
+.project:has(.project-main:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+/* Above the stretched link, so "Código" still opens the repo. */
 .project-links a {
+  position: relative;
+  z-index: 1;
   color: var(--accent);
   text-decoration: none;
 }
