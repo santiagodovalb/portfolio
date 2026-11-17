@@ -106,6 +106,8 @@ export default function App() {
                 <p className="period">{t(e.period)}</p>
               </div>
             ))}
+            <h3>{t(copy.languages)}</h3>
+            <p>{t(copy.languageList)}</p>
             <h3>{t(copy.tools)}</h3>
             <p className="tools">{tools}</p>
           </aside>

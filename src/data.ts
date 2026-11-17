@@ -27,6 +27,8 @@ export const copy = {
     en: 'Five years shipping production software. What I bring to this stage: working with others to build tools with real impact, grounded in data and cutting-edge technology.',
   },
   tools: { es: 'Herramientas', en: 'Tools' },
+  languages: { es: 'Idiomas', en: 'Languages' },
+  languageList: { es: 'Español nativo · Inglés bilingüe', en: 'Spanish (native) · English (bilingual)' },
   contactTitle: { es: 'Charlemos.', en: "Let's talk." },
   contactLead: {
     es: 'Abierto a colaborar con medios y agencias de comunicación, centros de investigación y equipos de gobierno.',
