@@ -29,8 +29,8 @@ export const copy = {
   tools: { es: 'Herramientas', en: 'Tools' },
   contactTitle: { es: 'Charlemos.', en: "Let's talk." },
   contactLead: {
-    es: 'Abierto a colaborar con ONGs, centros de investigación, medios y equipos de gobierno.',
-    en: 'Open to working with NGOs, think tanks, newsrooms and public sector teams.',
+    es: 'Abierto a colaborar con medios y agencias de comunicación, centros de investigación y equipos de gobierno.',
+    en: 'Open to working with newsrooms and communications agencies, think tanks and public sector teams.',
   },
   themeLabel: { es: 'Cambiar modo claro u oscuro', en: 'Toggle light and dark mode' },
   avatarAlt: { es: 'Retrato ilustrado de Santiago', en: 'Illustrated portrait of Santiago' },
