@@ -11,8 +11,8 @@ export const copy = {
   },
   eyebrow: { es: 'Ciencia política, IA y tecnología · Buenos Aires', en: 'Political science, AI and technology · Buenos Aires' },
   lead: {
-    es: 'Ingeniero de software y estudiante de Ciencia Política. Construyo herramientas que convierten datos públicos en evidencia sobre cómo nos gobernamos.',
-    en: 'Software engineer and political science student. I build tools that turn public data into evidence about how we are governed.',
+    es: 'Ingeniero de software y estudiante de Ciencia Política. Quiero combinar mi conocimiento técnico y mi formación teórica para participar en proyectos con impacto real.',
+    en: 'Software engineer and political science student. I want to combine my technical skills and my academic training to take part in projects with real impact.',
   },
   getInTouch: { es: 'Escribime', en: 'Get in touch' },
   stats: [
@@ -66,11 +66,11 @@ export const projects: Project[] = [
   },
   {
     id: 'ia-regulacion',
-    name: '¿Cómo se regula la IA?',
+    name: 'IA y el Estado',
     image: '/projects/ia-regulacion.svg',
     tagline: {
-      es: 'Cómo regulan la inteligencia artificial seis países de América Latina, comparados con la Unión Europea, Estados Unidos y China.',
-      en: 'How six Latin American countries regulate artificial intelligence, compared with the European Union, the United States and China.',
+      es: 'Cómo regulan la inteligencia artificial los principales países de América Latina, comparados con la Unión Europea, Estados Unidos y China.',
+      en: 'How the main Latin American countries regulate artificial intelligence, compared with the European Union, the United States and China.',
     },
     site: 'https://ia-regulacion.vercel.app',
     repo: 'https://github.com/santiagodovalb/ia-regulacion',
@@ -101,7 +101,7 @@ export const education = [
   },
 ];
 
-export const tools = 'TypeScript · React · Node.js · PostgreSQL · Claude API';
+export const tools = 'React · React Native · Next.js · Node.js · PostgreSQL · GraphQL · MySQL · TypeScript · Claude API';
 
 export type Item = { title: L; org: string; period: L; summary: L; bullets: L[] };
 
@@ -118,8 +118,8 @@ export const items: Item[] = [
     },
     bullets: [
       {
-        es: 'Construí desde cero el backoffice y la app de prospectos comerciales, y los flujos de préstamos y cuotas que usan los clientes.',
-        en: 'Built the backoffice and merchant-prospects apps from scratch, plus the loan and installment flows customers use.',
+        es: 'Construí desde cero el backoffice y la app de prospectos comerciales, así como los flujos de préstamos y cuotas que usan los clientes.',
+        en: 'Built the backoffice and merchant-prospects apps from scratch, as well as the loan and installment flows customers use.',
       },
       {
         es: 'Instrumenté las apps con datos de producción en New Relic, la señal sobre la que hoy corre el análisis automatizado del equipo.',
@@ -135,11 +135,14 @@ export const items: Item[] = [
     title: fullStack,
     org: 'Librodepases',
     period: same('2023 — 2024'),
-    summary: { es: 'Plataforma de estadísticas de fútbol.', en: 'Football analytics platform.' },
+    summary: {
+      es: 'Plataforma de estadísticas de fútbol para equipos, agentes y jugadores.',
+      en: 'Football analytics platform for clubs, agents and players.',
+    },
     bullets: [
       {
-        es: 'Construí la comparación de jugadores, una de las funciones diferenciales del producto, sobre una API de estadísticas en evolución.',
-        en: 'Built player comparison, one of the product’s standout features, on top of an evolving stats API.',
+        es: 'Construí la comparación de jugadores, una de las funciones diferenciales del producto, sobre una API con ligas de todo el mundo.',
+        en: 'Built player comparison, one of the product’s standout features, on top of an API covering leagues worldwide.',
       },
     ],
   },
@@ -153,8 +156,8 @@ export const items: Item[] = [
     },
     bullets: [
       {
-        es: 'Lideré un equipo de seis personas hasta lanzar la app, hoy usada por miles de socios.',
-        en: 'Led a team of six to launch the app, now used by thousands of members.',
+        es: 'Lideré los equipos de frontend y backend, construyendo sitios web dinámicos para campañas de marketing y una app usada por miles de socios.',
+        en: 'Led the frontend and backend teams, building dynamic websites for marketing campaigns and an app used by thousands of members.',
       },
     ],
   },
@@ -163,13 +166,13 @@ export const items: Item[] = [
     org: 'Altimetrik',
     period: same('2022'),
     summary: {
-      es: 'Contratista para Putnam Investments, gestora de inversiones de EE. UU.',
-      en: 'Contractor for Putnam Investments, a US asset manager.',
+      es: 'Desarrollo full-stack en Putnam Investments, gestora de inversiones de EE. UU.',
+      en: 'Full-stack development at Putnam Investments, a US asset manager.',
     },
     bullets: [
       {
-        es: 'Desarrollé funciones del sitio donde los inversores gestionan sus cuentas, y acompañé a los desarrolladores junior del equipo.',
-        en: 'Built features for the site investors use to manage their accounts, and mentored the team’s junior developers.',
+        es: 'Desarrollé funciones del sitio donde los inversores gestionan sus cuentas, presentando features al cliente y acompañando a los desarrolladores junior del equipo.',
+        en: 'Built features for the site investors use to manage their accounts, presenting features to the client and mentoring the team’s junior developers.',
       },
     ],
   },
@@ -180,8 +183,8 @@ export const items: Item[] = [
     summary: { es: 'Bootcamp intensivo de programación full-stack.', en: 'Intensive full-stack coding bootcamp.' },
     bullets: [
       {
-        es: 'Acompañé a unos 30 alumnos en sus proyectos y corregí exámenes con devoluciones escritas.',
-        en: 'Mentored about 30 students through their projects and graded exams with written feedback.',
+        es: 'Acompañé a unos 30 alumnos en sus clases, tareas y proyectos finales, y corregí exámenes con devoluciones escritas.',
+        en: 'Supported about 30 students through their classes, assignments and final projects, and graded exams with written feedback.',
       },
     ],
   },
