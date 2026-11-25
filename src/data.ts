@@ -61,7 +61,7 @@ export const projects: Project[] = [
       es: 'Cómo votan los bloques del Congreso argentino y quién vota en disidencia, votación por votación.',
       en: "How the blocs in Argentina's Congress vote and who dissents, one roll call at a time.",
     },
-    site: 'https://congreso-tracker.vercel.app',
+    site: 'https://comovota.santiagodoval.com.ar',
     repo: 'https://github.com/santiagodovalb/congreso-tracker',
   },
   {
@@ -72,7 +72,7 @@ export const projects: Project[] = [
       es: 'Cómo regulan la inteligencia artificial los principales países de América Latina, comparados con la Unión Europea, Estados Unidos y China.',
       en: 'How the main Latin American countries regulate artificial intelligence, compared with the European Union, the United States and China.',
     },
-    site: 'https://ia-regulacion.vercel.app',
+    site: 'https://ia.santiagodoval.com.ar',
     repo: 'https://github.com/santiagodovalb/ia-regulacion',
   },
   {
@@ -83,7 +83,7 @@ export const projects: Project[] = [
       es: 'Cada norma que publica el Estado nacional, resumida en castellano simple y ordenada según cuánto afecta a la gente.',
       en: 'Every rule Argentina’s national government publishes, summarized in plain Spanish and ranked by how much it affects people.',
     },
-    site: 'https://boletin-monitor-nine.vercel.app',
+    site: 'https://boletin.santiagodoval.com.ar',
     repo: 'https://github.com/santiagodovalb/boletin-monitor',
   },
 ];
